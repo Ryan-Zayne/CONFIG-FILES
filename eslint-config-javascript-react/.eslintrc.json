@@ -1,0 +1,65 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": [
+		"airbnb",
+		"airbnb/hooks",
+		"plugin:react/recommended",
+		"plugin:react/jsx-runtime",
+		"plugin:tailwindcss/recommended",
+		"plugin:@tanstack/eslint-plugin-query/recommended",
+		"prettier"
+	],
+
+	"overrides": [],
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+
+	"plugins": ["react", "tailwindcss"],
+
+	"root": true,
+
+	"rules": {
+		//Base Eslint Rules
+		"max-len": "off",
+		"indent": "off",
+		"no-tabs": "off",
+		"eol-last": "off",
+		"no-return-assign": ["error", "except-parens"],
+		"no-use-before-define": ["error", { "functions": false }],
+		"no-multiple-empty-lines": ["warn", { "max": 3 }],
+		"object-curly-newline": "off",
+		"comma-dangle": "off",
+		"arrow-body-style": "off",
+		"no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
+		"no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }],
+
+		//React plugin rules
+		"quote-props": "off",
+		"react/prop-types": "off",
+		"import/no-extraneous-dependencies": [
+			"error",
+			{ "devDependencies": true, "optionalDependencies": false, "peerDependencies": false }
+		],
+		"import/prefer-default-export": "off",
+		"react/self-closing-comp": ["error", { "component": true }],
+		"react/jsx-curly-brace-presence": [
+			"error",
+			{ "props": "ignore", "children": "ignore", "propElementValues": "always" }
+		],
+		"react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
+		"react/jsx-boolean-value": ["error", "always"],
+		"react/button-has-type": "off",
+		"react/function-component-definition": "off",
+		"react-hooks/exhaustive-deps": "warn",
+		"react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".jsx"] }],
+
+		//Tailwind rules
+		"tailwindcss/no-custom-classname": "off",
+		"tailwindcss/classnames-order": ["warn", { "config": "tailwind.config.cjs" }]
+	}
+}
