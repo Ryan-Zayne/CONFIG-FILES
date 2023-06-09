@@ -12,27 +12,20 @@
 		"plugin:tailwindcss/recommended",
 		"plugin:@tanstack/eslint-plugin-query/recommended",
 		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/recommended-requiring-type-checking",
 		"prettier"
 	],
 	"plugins": ["react", "tailwindcss", "@typescript-eslint"],
 
-	"overrides": [],
-
 	"parser": "@typescript-eslint/parser",
 
 	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module",
 		"project": "./tsconfig.json"
 	},
 
 	"root": true,
-
-	// "settings": {
-	// 	"import/resolver": {
-	// 		"node": {
-	// 			"extensions": [".js", ".jsx", ".ts", ".tsx"]
-	// 		}
-	// 	}
-	// },
 
 	"rules": {
 		//Base Eslint Rules
