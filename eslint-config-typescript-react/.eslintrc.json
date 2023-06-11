@@ -5,16 +5,17 @@
 	},
 	"extends": [
 		"airbnb",
-		"airbnb-typescript",
 		"airbnb/hooks",
 		"plugin:react/recommended",
 		"plugin:react/jsx-runtime",
+		"airbnb-typescript",
 		"plugin:tailwindcss/recommended",
 		"plugin:@tanstack/eslint-plugin-query/recommended",
 		"plugin:@typescript-eslint/recommended",
-		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+		// "plugin:@typescript-eslint/recommended-requiring-type-checking",
 		"prettier"
 	],
+
 	"plugins": ["react", "tailwindcss", "@typescript-eslint"],
 
 	"parser": "@typescript-eslint/parser",
@@ -23,6 +24,12 @@
 		"ecmaVersion": "latest",
 		"sourceType": "module",
 		"project": "./tsconfig.json"
+	},
+
+	"settings": {
+		"import/resolver": {
+			"typescript": {}
+		}
 	},
 
 	"root": true,
@@ -50,7 +57,9 @@
 		"comma-dangle": "off",
 		"arrow-body-style": "off",
 		"no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
-		"no-unused-expressions": [
+		"no-unused-expressions": "off",
+
+		"@typescript-eslint/no-unused-expressions": [
 			"error",
 			{
 				"allowShortCircuit": true,
@@ -69,6 +78,7 @@
 				"peerDependencies": false
 			}
 		],
+
 		"import/prefer-default-export": "off",
 		"react/self-closing-comp": [
 			"error",
