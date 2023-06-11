@@ -68,8 +68,6 @@
 		],
 
 		//React plugin rules
-		"quote-props": "off",
-		"react/prop-types": "off",
 		"import/no-extraneous-dependencies": [
 			"error",
 			{
@@ -110,6 +108,7 @@
 				"extensions": [".tsx", ".jsx"]
 			}
 		],
+		"react/require-default-props": ["error", { "functions": "defaultArguments" }],
 
 		//Tailwind rules
 		"tailwindcss/no-custom-classname": "off",
