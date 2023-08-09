@@ -4,6 +4,7 @@
 		"es2021": true
 	},
 	"extends": [
+		"eslint:recommended",
 		"airbnb",
 		"airbnb/hooks",
 		"plugin:react/recommended",
@@ -39,8 +40,8 @@
 		//Base Eslint Rules
 		"max-len": "off",
 		"indent": "off",
+		"no-implicit-coercion": "error",
 		"no-tabs": "off",
-		"no-implicit-coercion": "warn",
 		"eol-last": "off",
 		"no-return-assign": ["error", "except-parens"],
 		"no-use-before-define": [
@@ -72,9 +73,7 @@
 		"import/no-extraneous-dependencies": [
 			"error",
 			{
-				"devDependencies": true,
-				"optionalDependencies": false,
-				"peerDependencies": false
+				"devDependencies": true
 			}
 		],
 
@@ -127,6 +126,7 @@
 		"unicorn/prevent-abbreviations": "off",
 		"unicorn/new-for-builtins": "off",
 		"unicorn/numeric-separators-style": "off",
+		"unicorn/no-array-reduce": "off",
 
 		//Tailwind rules
 		"tailwindcss/no-custom-classname": "off",
