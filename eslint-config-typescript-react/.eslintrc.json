@@ -37,7 +37,7 @@
 	"root": true,
 
 	"rules": {
-		//Base Eslint Rules
+		//Base Eslint/Typescript Eslint Rules
 		"max-len": "off",
 		"indent": "off",
 		"no-implicit-coercion": "error",
@@ -57,6 +57,12 @@
 			}
 		],
 		"object-curly-newline": "off",
+		"prefer-arrow-callback": [
+			"error",
+			{
+				"allowNamedFunctions": true
+			}
+		],
 		"comma-dangle": "off",
 		"arrow-body-style": "off",
 		"no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
@@ -68,6 +74,8 @@
 				"allowTernary": true
 			}
 		],
+		"no-return-await": "off",
+		"@typescript-eslint/return-await": "error",
 
 		//React plugin rules
 		"import/no-extraneous-dependencies": [
@@ -76,7 +84,6 @@
 				"devDependencies": true
 			}
 		],
-
 		"import/prefer-default-export": "off",
 		"react/self-closing-comp": [
 			"error",
@@ -102,13 +109,28 @@
 		"react/button-has-type": "off",
 		"react/function-component-definition": "off",
 		"react-hooks/exhaustive-deps": "warn",
+
 		"react/jsx-filename-extension": [
 			"error",
 			{
 				"extensions": [".tsx", ".jsx"]
 			}
 		],
+		"react/jsx-props-no-spreading": ["error", { "html": "ignore", "explicitSpread": "ignore" }],
 		"react/require-default-props": "off",
+
+		// Jsx-A11y rules
+		"jsx-a11y/click-events-have-key-events": "off",
+		"jsx-a11y/no-static-element-interactions": "off",
+		"jsx-a11y/label-has-associated-control": [
+			"error",
+			{
+				"labelComponents": ["CustomInputLabel"],
+				"labelAttributes": ["label"],
+				"controlComponents": ["CustomInput"],
+				"depth": 3
+			}
+		],
 
 		//Unicorn rules
 		"unicorn/no-null": "off",
@@ -130,10 +152,11 @@
 
 		//Tailwind rules
 		"tailwindcss/no-custom-classname": "off",
+		"tailwindcss/no-contradicting-classname": "off",
 		"tailwindcss/classnames-order": [
 			"warn",
 			{
-				"config": "tailwind.config.cjs"
+				"config": "./tailwind.config.ts"
 			}
 		]
 	}
